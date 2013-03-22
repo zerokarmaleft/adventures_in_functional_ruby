@@ -2,8 +2,10 @@ adventures_in_functional_ruby
 =============================
 
 A combination of Brian Marick's
-[Stunted](https://github.com/marick/stunted) library with Clojure's
-persistent data structures and concurrency primitives.
+[Stunted](https://github.com/marick/stunted) library with
+[Clojure](http://clojure.org)'s [persistent data
+structures](http://clojure.org/data_structures) and [concurrency
+primitives](http://clojure.org/concurrent_programming).
 
 Running the examples
 ====================
