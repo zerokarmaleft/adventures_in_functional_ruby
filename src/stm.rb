@@ -35,10 +35,16 @@ class Task
   end
 end
 
+puts "10,000 iterations of 10 threads incrementing each of 10 refs"
+puts "Each ref should have a final result of 100,000"
+
 refs    = (0...10).map { Ref.new(0) }
 pool    = Executors::new_fixed_thread_pool 10
 tasks   = (0...10).map { Task.new(refs) }
+puts refs.map(&:deref).inspect
+
 futures = pool.invoke_all(tasks)
 futures.each { |f| f.get }
 pool.shutdown
+
 puts refs.map(&:deref).inspect
