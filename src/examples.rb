@@ -68,18 +68,3 @@ end
 x = Atom.new(0)
 swap!.(x, inc)
 swap!.(x, dec)
-
-# using functional value updates in a Ref
-java_import 'clojure.lang.LockingTransaction'
-
-module CoreBridge
-  def sync(&block)
-    LockingTransaction::run_in_transaction(b)
-  end
-  defn :ref_set, -> ref, val { ref.set val }
-  defn :alter, -> ref, f, *args { ref.alter f, args }
-end
-
-x = Ref.new(0)
-y = Ref.new(0)
-sync.(-> { ref_set.(x, 1); ref_set.(y, 42) })
