@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     jbundler (0.4.1)
       maven-tools (~> 0.32.1)

@@ -1,3 +1,4 @@
-gem "jbundler"
+source "https://rubygems.org"
 
+gem "jbundler"
 gem "stunted"
